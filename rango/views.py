@@ -7,7 +7,9 @@ from django.shortcuts import render
 #     return HttpResponse("Rango says hey there partner!")
 
 def about(request):
-    return HttpResponse("Rango says here is the about page.")
+    #return HttpResponse("Rango says here is the about page.")
+    context_dict = {'yourname':"Junhan Kim"}
+    return render(request, 'rango/about.html', context=context_dict)
 
 def index(request):
     context_dict = {'boldmessage':"Crunchy, creamy, cookie, candy, cupcake!"}
