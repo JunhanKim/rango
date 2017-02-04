@@ -14,14 +14,17 @@
                         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
                     {% endfor %}
                 </ul>
+            {% else %}
+                <strong>
+                    No pages currently in category
+                </strong>
+            {% endif %}
         {% else %}
-            <strong>
-                No pages currently in category
-            </strong>
+            The specified category does not exist!
         {% endif %}
-    {% else %}
-        The specified category does not exist!
-    {% endif %}
-    </div>
-</body>
+        </div>
+        <div>
+            <a href="/rango/">Return to main page</a> <br />
+        </div>
+    </body>
 </html>
