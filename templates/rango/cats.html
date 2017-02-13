@@ -3,7 +3,14 @@
 <ul>
     {% if cats %}
         {% for c in cats %}
-            <li><a href="{% url 'show_category' c.slug %}">{{ c.name }}</a></li>
+            {% if c == act_cats %}
+                <li>
+                    <strong><a href="/rango/category/{{ c.slug }}">{{ c.name }} </a></strong>
+                </li>
+            {% else %}
+                <!-- <li><a href="{#% url 'rango:show_category' c.slug %#}">{{ c.name }}</a></li> -->
+                <li><a href="/rango/category/{{ c.slug }}">{{ c.name }} </a></li>
+            {% endif %}
         {% endfor %}
     {% else %}
         <li><string>There are no categories present.</string></li>

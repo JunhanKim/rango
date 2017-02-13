@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    Add Category
+    {{ category.name }} Add Category
 {% endblock %}
 
 {% block body_block %}
@@ -22,5 +22,4 @@
             <input type="submit" name="submit" value="Create Category" />
         </form>
     </div>
-
 {% endblock %}
