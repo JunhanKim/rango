@@ -56,7 +56,7 @@ def index(request):
     request.session.set_test_cookie()
     category_list = Category.objects.order_by('-likes')[:5]
     pageview_list = Page.objects.order_by('-views')[:5]
-    context_dict = {'categories':category_list, 'pageviews':pageview_list}
+    context_dict = {'categories':category_list, 'pages':pageview_list}
     
     #context_dict = {'boldmessage':"Crunchy, creamy, cookie, candy, cupcake!"}
     visitor_cookie_handler(request)
