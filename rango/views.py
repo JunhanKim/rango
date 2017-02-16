@@ -30,7 +30,7 @@ def visitor_cookie_handler(request):
         visits = visits + 1
 
         #response.set_cookie('last_visit', str(datetime.now()))
-        response.session['last_visit'] = str(datetime.now())
+        request.session['last_visit'] = str(datetime.now())
     else:
         visits = 1
         request.session['last_visit'] = last_visit_cookie
@@ -47,7 +47,9 @@ def about(request):
     #     request.session.delete_test_cookie()
     print(request.method)
     print(request.user)
+    visitor_cookie_handler(request)
     context_dict = {'yourname':"Junhan Kim"}
+    context_dict['visits'] = request.session['visits']
     return render(request, 'rango/about.html', context=context_dict)
 
 def index(request):
